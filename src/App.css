@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+.App li {
+  text-align: center;
+}
+.item {
+  font-weight: bold;
+  display: flex;
+  padding: 4px;
+  width: 50px;
+  margin: auto;
+  text-align: center;
+}
+.item p {
+  color: red;
+  margin: auto;
+  cursor: pointer;
+}
