@@ -4,7 +4,6 @@ const initialState = {
   results: [],
 };
 const reducer = (state = initialState, action) => {
-  console.log(initialState, action);
   switch (action.type) {
     case actionTypes.STORE_RESULTS:
       return {
