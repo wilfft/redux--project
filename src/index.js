@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import resultsReducer from "./store/reducers/results";
 import counterReducer from "./store/reducers/counter";
 
-import { createStore, combineReducers, applyMiddleware } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 
 const rootReducers = combineReducers({
   ctr: counterReducer,
@@ -25,8 +25,11 @@ const logger = (store) => {
     };
   };
 };
-const store = createStore(rootReducers, applyMiddleware(logger));
-
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(
+  rootReducers,
+  composeEnhancers(applyMiddleware(logger))
+);
 ReactDOM.render(
   <Provider store={store}>
     <App />
