@@ -20,7 +20,7 @@ const logger = (store) => {
     return (action) => {
       console.log("[MIDDLEWARE} BEFORE NEXT");
       const result = next(action);
-      console.log("[MIDDLEWARE} AFTER NEXT");
+      console.log("[MIDDLEWARE} AFTER NEXT", store.getState());
       return result;
     };
   };

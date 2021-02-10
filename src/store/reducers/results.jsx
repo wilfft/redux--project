@@ -1,11 +1,16 @@
-import * as actionTypes from "../actions";
+import * as actionTypes from "../actions/actions";
 
 const initialState = {
   results: [],
 };
+
+//criaremos actions creators para agir como codigo assincrono
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_RESULTS:
+      setTimeout(() => {
+        return {}, 2000;
+      });
       return {
         ...state,
         results: state.results.concat({
