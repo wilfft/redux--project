@@ -18,7 +18,7 @@ const rootReducers = combineReducers({
 const logger = (store) => {
   return (next) => {
     return (action) => {
-      console.log("[MIDDLEWARE} BEFORE NEXT");
+      console.log("[MIDDLEWARE} BEFORE NEXT", action);
       const result = next(action);
       console.log("[MIDDLEWARE} AFTER NEXT", store.getState());
       return result;
@@ -28,7 +28,7 @@ const logger = (store) => {
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducers,
-  composeEnhancers(applyMiddleware(logger))
+  composeEnhancers(applyMiddleware(logger, thunk))
 );
 ReactDOM.render(
   <Provider store={store}>

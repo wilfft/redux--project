@@ -4,7 +4,8 @@ const initialState = {
   results: [],
 };
 
-//criaremos actions creators para agir como codigo assincrono
+//criaremos actions creators para agir como codigo sincrono
+//e passaremos pra assincrono com o redux thunk
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_RESULTS:

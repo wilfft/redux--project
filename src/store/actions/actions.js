@@ -27,11 +27,17 @@ export const sub = (value) => {
     value: value,
   };
 };
-
-export const storeResults = (results) => {
+export const saveResults = (results) => {
   return {
     type: STORE_RESULTS,
     results: results,
+  };
+};
+export const storeResults = (results) => {
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(saveResults(results));
+    }, 2000);
   };
 };
 
