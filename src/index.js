@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 
 import resultsReducer from "./store/reducers/results";
 import counterReducer from "./store/reducers/counter";
-
+import thunk from "redux-thunk";
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 
 const rootReducers = combineReducers({
