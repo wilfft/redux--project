@@ -9,6 +9,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.STORE_RESULTS:
+      //posso alterar aqui o resultado
       setTimeout(() => {
         return {}, 2000;
       });
